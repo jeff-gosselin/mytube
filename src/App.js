@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VideoItem from './components/VideoItem';
+import VideoListItem from './components/VideoListItem';
 import './App.css';
 import axios from 'axios';
 
@@ -32,7 +32,9 @@ class App extends Component {
     let ytVideos;
   
     if (this.state.ytData.length > 0) {
-      ytVideos = this.state.ytData.map(vid => <VideoItem key={vid.id.videoId} data={vid.snippet} />);
+      ytVideos = this.state.ytData.map(vid => {
+        return <VideoListItem key={vid.id.videoId} data={vid.snippet} videoId={vid.id.videoId} />
+      });
     }
 
     return (
