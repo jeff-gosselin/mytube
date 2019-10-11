@@ -1,0 +1,19 @@
+.video-item {
+    display: flex;
+    align-items: center;
+}
+
+.video-item:not(:first-child) {
+    padding-top: 1.5rem;
+}
+
+.video-item:not(:last-child) {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.video-item-image {
+    width: 320px;
+    height: 180px;
+    margin-right: 2rem;
+}
