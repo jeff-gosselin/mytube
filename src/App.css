@@ -3,3 +3,13 @@
   background-color: #fff;
   border-radius: 4px;
 }
+
+.more {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.more button {
+  padding: .25rem .75rem;
+}
