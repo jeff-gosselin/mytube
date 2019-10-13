@@ -13,7 +13,7 @@ const VideoListItem = (props) => {
                 </Link>
             </div> 
             <div className="video-list-item-details">
-                <Link to={`/vid/${props.videoId}`} onClick={(e) => props.vidRouteId(e, props.videoId)}>
+                <Link to={`/vid/${props.videoId}`}>
                     <h1>{title}</h1>
                 </Link>
                 <p>{description}</p>

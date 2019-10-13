@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import '../css/VideoItem.css';
 
 const VideoItem = (props) => {
+    var currentLocation = props.location;
+    console.log(currentLocation);
+
     return (
         <div className="video-page">
             <Link className="back" to="/">back to search</Link>

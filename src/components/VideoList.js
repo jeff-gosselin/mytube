@@ -41,17 +41,16 @@ class VideoList extends Component {
 
     render() {
         let ytVideos;
-  
         if (this.state.ytData.length > 0) {
-        ytVideos = this.state.ytData.map(vid => {
-            return (
-                <VideoListItem 
-                key={vid.id.videoId} 
-                data={vid.snippet} 
-                videoId={vid.id.videoId} 
-                vidRouteId={this.props.vidRouteId} />
-            )
-        });
+            ytVideos = this.state.ytData.map(vid => {
+                return (
+                    <VideoListItem 
+                    key={vid.id.videoId} 
+                    data={vid.snippet} 
+                    videoId={vid.id.videoId} 
+                    />
+                )
+            });
         }
 
         return (

@@ -5,23 +5,15 @@ import VideoItem from './components/VideoItem';
 
 
 class App extends Component {
-  state = {
-    routeId: ''
-  }
-  
-  vidRouteId = (e, id) => {
-    this.setState({
-      routeId: id
-    })
-  }
 
   render() {
-
     return (
       <Switch>
-        <Route exact path="/" render={() => <VideoList vidRouteId={this.vidRouteId} />} />
-        <Route exact path={`/vid/${this.state.routeId}`} render={() => <VideoItem routeId={this.state.routeId} />} />
-        
+        <Route exact path="/" render={() => <VideoList />} />
+        <Route path='/vid/:id' render={(routerProps) => {
+          let id = routerProps.match.params.id;
+          return (<VideoItem routeId={id} />)
+        }} />
       </Switch>
     );
   } 
