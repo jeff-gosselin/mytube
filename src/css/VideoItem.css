@@ -1,0 +1,11 @@
+.video-page {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.back {
+    position: absolute;
+}
