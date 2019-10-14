@@ -11,6 +11,7 @@ class VideoItem extends Component {
     state = {
         comments: []
     }
+
     async componentDidMount() {
         let comments = await axios.get(`https://www.googleapis.com/youtube/v3/commentThreads?key=${API}&textFormat=plainText&part=snippet&videoId=${this.props.routeId}&maxResults=50`);
         this.setState({
@@ -18,10 +19,7 @@ class VideoItem extends Component {
         })
     }
 
-
-
     render() {
-        console.log(this.state.comments);
         let vidComments;
         if (this.state.comments.length > 0) {
             vidComments = this.state.comments.map(comment => <Comment key={comment.id} data={comment.snippet} />);
@@ -44,8 +42,7 @@ class VideoItem extends Component {
 
                 <div className="comments-section">
                     {vidComments}
-                </div>
-                
+                </div>      
             </div>
         )
     }  

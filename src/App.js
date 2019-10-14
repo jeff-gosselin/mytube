@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   async moreVideos() {
-    console.log("Q:", this.state.query);
     let yt;
     if (this.state.query === '') {
       yt = await axios.get(`${URL}&pageToken=${this.state.nextPage}`);
@@ -39,7 +38,6 @@ class App extends Component {
 
   async handleSubmit(e, query) {
       e.preventDefault();
-      console.log(query);
       let yt = await axios.get(`${URL}+${query}`);
       this.setState({
           ytData: yt.data.items,
