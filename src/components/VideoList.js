@@ -2,47 +2,22 @@ import React, { Component } from 'react';
 import VideoListItem from './VideoListItem';
 import SearchBar from './SearchBar';
 import '../css/VideoList.css';
-import axios from 'axios';
 
-const API = 'AIzaSyBeimXtjgzfQcogY-fP8_CHPybmLpFaieo';
-const URL = `https://www.googleapis.com/youtube/v3/search?key=${API}&part=snippet&type=video&q=surf`;
+
 
 class VideoList extends Component {
-    state = {
-        ytData: [],
-        nextPage: ''
-    }
 
-    async componentDidMount() {
-        let yt = await axios.get(URL);
-        this.setState({
-            ytData: yt.data.items,
-            nextPage: yt.data.nextPageToken
-        })
-    }
-    
-    async moreVideos() {
-        let yt = await axios.get(`${URL}&pageToken=${this.state.nextPage}`);
-        this.setState({
-            ytData: [...this.state.ytData, ...yt.data.items],
-            nextPage: yt.data.nextPageToken
-        })
-    }
-
-    async handleSubmit(e, query) {
-        e.preventDefault();
-        console.log(query);
-        let yt = await axios.get(`${URL}+${query}`);
-        this.setState({
-            ytData: yt.data.items,
-            nextPage: yt.data.nextPageToken
-        })
-    }
+    // componentDidMount = () => {
+    //     const catalyst = document.querySelector('.more');
+    //     console.log(catalyst);
+    //     const observer = new IntersectionObserver(this.props.moreVideos);
+    //     observer.observe(catalyst);  
+    // }
 
     render() {
         let ytVideos;
-        if (this.state.ytData.length > 0) {
-            ytVideos = this.state.ytData.map(vid => {
+        if (this.props.ytData.length > 0) {
+            ytVideos = this.props.ytData.map(vid => {
                 return (
                     <VideoListItem 
                     key={vid.id.videoId} 
@@ -55,11 +30,11 @@ class VideoList extends Component {
 
         return (
             <div>
-                <SearchBar handleSubmit={this.handleSubmit.bind(this)} />
+                <SearchBar handleSubmit={this.props.handleSubmit} />
                 <div className="video-list">
                     {ytVideos}
                     <div className="more">
-                        <button onClick={this.moreVideos.bind(this)}>Load More Videos</button>
+                        <button onClick={this.props.moreVideos}>Load More Videos</button>
                     </div>  
                 </div>
             </div>

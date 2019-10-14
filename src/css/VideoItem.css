@@ -1,6 +1,8 @@
 .video-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 2rem;
     background-color: #fff;
     border-radius: 4px;
@@ -11,4 +13,11 @@
     top: 0;
     left: 0;
     color: #ddd;
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #aaa;
+    margin-top: 2rem;
 }
