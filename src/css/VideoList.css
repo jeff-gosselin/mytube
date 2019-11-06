@@ -2,6 +2,7 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 4px;
+  margin: calc(2rem + 100px) 2rem 2rem;
 }
 
 .more {
@@ -11,5 +12,5 @@
 }
 
 .more button {
-  padding: .25rem .75rem;
+  padding: 0.25rem 0.75rem;
 }
