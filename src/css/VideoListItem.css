@@ -21,6 +21,10 @@
   margin-left: 2rem;
 }
 
+.video-list-item-image img {
+  border: 1px solid black;
+}
+
 .video-list-item-image img:hover,
 .video-list-item-details h1:hover {
   cursor: pointer;
@@ -28,15 +32,24 @@
 }
 
 .video-list-item-details h1 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  color: rgba(40, 86, 104, 1);
+}
+
+.video-title {
+  text-decoration: none;
+}
+
+.video-list-item-details h1:hover {
+  color: rgb(0, 154, 181);
 }
 
 .video-list-item-details p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1rem;
+  opacity: 0.85;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 760px) {
   .video-list-item {
     flex-direction: column;
   }
