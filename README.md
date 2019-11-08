@@ -1,6 +1,7 @@
 <h1>Surfing The Tube</h1>
 
 An app that uses the YouTube API allowing you to search surfing videos.
+
 [Hosted on Heroku](https://surftube.herokuapp.com)
 
 ## Purpose
